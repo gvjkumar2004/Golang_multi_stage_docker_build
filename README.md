@@ -1,5 +1,20 @@
-# Multi Stage Docker Build
+# Multi Stage Docker Build for golang application
 
-The main purpose of choosing a golang based applciation to demostrate this example is golang is a statically-typed programming language that does not require a runtime in the traditional sense. Unlike dynamically-typed languages like Python, Ruby, and JavaScript, which rely on a runtime environment to execute their code, Go compiles directly to machine code, which can then be executed directly by the operating system.
+This repository contains a simple calculator application written in Go. It showcases the advantages of using Go with Docker, particularly through multi-stage builds and distroless images.
 
-So the real advantage of multi stage docker build and distro less images can be understand with a drastic decrease in the Image size.
+## Why Go?
+
+- **Statically-Typed Language**: Go compiles directly to machine code and does not require a runtime. This results in smaller and faster executables compared to dynamically-typed languages.
+- **Efficient Execution**: No need for additional runtime dependencies, leading to streamlined containerization.
+
+## Dockerizing with Multi-Stage Builds and Distroless Images
+
+### Multi-Stage Builds
+
+- **Reduced Image Size**: Separates the build environment from the runtime environment, ensuring only the final binary is included in the final image.
+- **Cleaner Builds**: Minimizes the size of the Docker image by excluding build tools and dependencies.
+
+### Distroless Images
+
+- **Minimalist Approach**: Contains only the essential runtime libraries needed to run the application, excluding unnecessary components like package managers or shells.
+- **Enhanced Security**: Reduces attack surfaces by removing unnecessary utilities from the container.
